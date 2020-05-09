@@ -5,15 +5,30 @@ Overly complex Fibonacci Calculator for learning purposes
 
 
 ### Client Core technologies:
-- TODO
+- React
+- Axios
 
 ### Server Core Technologies
-- TODO
+- ExpressJS
+- Redis
+- Postgres
+- Nodemon
 
 ### Worker Core Technologies
-- TODO
+- Nodemon
+- Redis
+
+### Running the application
+- `docker-compose up --build`
+- Navigate to localhost:3050
+
+### Nginx Server
+- Nginx
+- Upstream routing: 
+    - React client
+    - Express Server 
 
 ## Version
-Version: 0.0.1
+Version: 0.0.2
 
 Created By Gabriel Stone (@GabStone)
