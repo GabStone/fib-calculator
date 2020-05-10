@@ -1,0 +1,26 @@
+sudo: required
+services:
+  - docker
+
+
+beofre_install:
+  - docker build -t gabstone/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true gabstone/react-test npm test
+
+after_success:
+  # Build images
+  - docker build -t gabstone/fib-client ./client
+  - docker build -t gabstone/fib-nginx ./nginx
+  - docker build -t gabstone/fib-server ./server
+  - docker build -t gabstone/fib-worker ./worker
+
+  # Docker CLI Login
+  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password_stdin
+
+  # Push images to Docker Hub
+  - docker push gabstone/fib-client
+  - docker push gabstone/fib-nginx
+  - docker push gabstone/fib-server
+  - docker push gabstone/fib-worker
