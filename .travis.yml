@@ -17,7 +17,7 @@ after_success:
   - docker build -t gabstone/fib-worker ./worker
 
   # Docker CLI Login
-  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password_stdin
+  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
 
   # Push images to Docker Hub
   - docker push gabstone/fib-client
