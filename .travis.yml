@@ -30,7 +30,7 @@ deploy:
   edge: true
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "prod-ready-react-app"
+  app: "fib-calculator"
   env: "ProdReadyReactApp-env"
   bubcket_name: "elasticbeanstalk-us-east-1-837062711494"
   bucket_path: "fib-calculator"
